@@ -146,12 +146,15 @@ const MessageArea = ({ messages }: { messages: Message[] }) => {
   );
 };
 
-// Input Bar Component
-const InputBar = ({ currentMessage, setCurrentMessage, onSubmit }: {
+interface InputBarProps {
   currentMessage: string;
   setCurrentMessage: (message: string) => void;
-  onSubmit: (e: React.FormEvent) => void;
-}) => {
+  onSubmit: () => void;
+}
+
+
+// Input Bar Component
+const InputBar = ({ currentMessage, setCurrentMessage, onSubmit }: InputBarProps) => {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
