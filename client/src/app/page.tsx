@@ -158,13 +158,13 @@ const InputBar = ({ currentMessage, setCurrentMessage, onSubmit }: InputBarProps
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      onSubmit(e);
+      onSubmit();
     }
   };
 
   const handleButtonClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    onSubmit(e);
+    onSubmit();
   };
 
   return (
